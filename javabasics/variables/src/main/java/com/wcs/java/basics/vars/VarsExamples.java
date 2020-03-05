@@ -2,9 +2,13 @@ package com.wcs.java.basics.vars;
 
 /**
  * 
- * 1) vars are scoped 2) instance member var 3) static member var 4)
- * overshadowing of member vars 5) pass by reference 6) final as parameter 7)
- * final as member variable
+ * 1) vars are scoped 
+ * 2) instance member var 
+ * 3) static member var 
+ * 4)overshadowing of member vars 
+ * 5) pass by reference 
+ * 6) final as parameter 
+ * 7) final as member variable
  * 
  * 
  * 
@@ -17,9 +21,12 @@ public class VarsExamples {
 	String name;
 	public String overShadowedMemberVar;
 	public static String myStaticVar = "David";
+	final String finalVariable;
 
 	public VarsExamples(String name) {
 		this.name = name;
+		// wenn man die nächste Zeile kommentiert, kompiliert es nicht, warum?
+		finalVariable = name;
 	}
 
 	//Examines if a value is passed by reference or by value
@@ -99,12 +106,12 @@ public class VarsExamples {
 	}
 
 	/**
-	 * Warum kompiliert das nicht? :;
+	 * Warum kompiliert das nicht? :; wenn man Zeile 107 wieder den kommentar wegnimmt
 	 * 
 	 * @param name
 	 */
 	public static void changeFinalParameter(final String string) {
-		string = "Something else";
+		//string = "Something else";
 	}
 
 }
